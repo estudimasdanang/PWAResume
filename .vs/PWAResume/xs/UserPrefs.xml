@@ -1,0 +1,20 @@
+﻿<Properties StartupConfiguration="{CFFC82DC-28BA-4F0E-9B57-75FC94C36BEE}|Default">
+  <MonoDevelop.Ide.ItemProperties.PWAResumeWeb PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Source Control Explorer">
+    <Files>
+      <File FileName="PWAResumeWeb/Views/Shared/_Layout.cshtml" Line="11" Column="19" />
+      <File FileName="PWAResumeWeb/appsettings.json" Line="1" Column="1" />
+      <File FileName="PWAResumeWeb/appsettings.Development.json" Line="1" Column="1" />
+      <File FileName="PWAResumeWeb/Program.cs" Line="1" Column="1" />
+      <File FileName="PWAResumeWeb/Startup.cs" Line="1" Column="1" />
+      <File FileName="Source Control Explorer" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <AuthorInfo Name="estudimasdanang" Email="yovaloel@gmail.com" Copyright="" Company="" Trademark="" />
+</Properties>
