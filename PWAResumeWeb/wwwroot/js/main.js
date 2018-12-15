@@ -79,7 +79,7 @@ $(document).ready(function() {
 
   $(function() {
     typed.typed({
-      strings: ["Estu Dimas Danang.", ".Net Full Stack Developer", "Freelancer.", "Photographer", "Mobile Developer", "Technology Enthusiast"],
+      strings: ["Estu Dimas Danang", ".Net Full Stack Developer", "Freelancer", "Photographer", "Mobile Developer", "Technology Enthusiast"],
       typeSpeed: 100,
       loop: true,
     });

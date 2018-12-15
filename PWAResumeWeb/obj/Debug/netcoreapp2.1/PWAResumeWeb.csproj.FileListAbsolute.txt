@@ -55,3 +55,4 @@
 /Users/estudimasdanang/Projects/PWAResumeWeb/obj/Debug/netcoreapp2.1/PWAResumeWeb.dll
 /Users/estudimasdanang/Projects/PWAResumeWeb/obj/Debug/netcoreapp2.1/PWAResumeWeb.pdb
 /Users/estudimasdanang/Projects/PWAResumeWeb/obj/Debug/netcoreapp2.1/PWAResumeWeb.csproj.CopyComplete
+/Users/estudimasdanang/Projects/PWAResumeWeb/obj/Debug/netcoreapp2.1/PWAResumeWeb.csprojAssemblyReference.cache
