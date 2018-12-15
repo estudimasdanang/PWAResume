@@ -11506,11 +11506,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/estudimasdanang/Projects/PWAResume/PWAResumeWeb/PWAResumeWeb.csproj",
+      "projectUniqueName": "/Users/estudimasdanang/Projects/PWAResumeWeb/PWAResumeWeb.csproj",
       "projectName": "PWAResumeWeb",
-      "projectPath": "/Users/estudimasdanang/Projects/PWAResume/PWAResumeWeb/PWAResumeWeb.csproj",
+      "projectPath": "/Users/estudimasdanang/Projects/PWAResumeWeb/PWAResumeWeb.csproj",
       "packagesPath": "/Users/estudimasdanang/.nuget/packages/",
-      "outputPath": "/Users/estudimasdanang/Projects/PWAResume/PWAResumeWeb/obj",
+      "outputPath": "/Users/estudimasdanang/Projects/PWAResumeWeb/obj",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
