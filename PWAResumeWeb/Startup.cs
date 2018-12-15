@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
+using PWAResumeWeb.Helper;
 
 namespace PWAResumeWeb
 {
@@ -54,20 +55,7 @@ namespace PWAResumeWeb
             app.UseStaticFiles();
             app.UseCookiePolicy();
 
-            // This will add "Libs" as another valid static content location
-            app.UseStaticFiles(new StaticFileOptions()
-            {
-                FileProvider = new PhysicalFileProvider(
-                     Path.Combine(Directory.GetCurrentDirectory(), @"lib")),
-                RequestPath = new PathString("/lib")
-            });
 
-            app.UseStaticFiles(new StaticFileOptions()
-            {
-                FileProvider = new PhysicalFileProvider(
-         Path.Combine(Directory.GetCurrentDirectory(), @"css")),
-                RequestPath = new PathString("/css")
-            });
 
             app.UseMvc(routes =>
             {
@@ -76,5 +64,9 @@ namespace PWAResumeWeb
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
         }
+
+
     }
+
+
 }
