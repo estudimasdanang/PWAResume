@@ -152,6 +152,57 @@ $(document).ready(function() {
 
 
   // Call the functions
-  magnifPopup();
+    magnifPopup();
+
+
+    //button send email
+    $('#btnSendEmail').click(function(){
+        var name    = $('#txtname').val();
+        var subject = $('#txtsubject').val();
+        var content = $('#txtmessage').val();
+        var email   = $('#txtemail').val();
+
+        if($.trim(name) == ''){
+            alert('name can not be empty');
+            return false;
+        }
+
+        if($.trim(subject) == ''){
+            alert('subject can not be empty');
+            return false;
+        }
+
+        if($.trim(content) == ''){
+            alert('content email can not be empty');
+            return false;
+        }
+
+        if($.trim(email) == ''){
+            alert('email address can not be empty');
+            return false;
+        }
+
+        var param = {
+            OriginSenderName:name,
+            OriginSenderEmail:email,
+            EmailSubject:subject,
+            EmailBody:content
+        };
+
+
+        $.ajax({
+            url: window.location.href + 'api/Email',
+            type: 'POST',
+            dataType:'json',
+            contentType:'application/json; charset=utf-8',
+            data: JSON.stringify(param),
+            cache: false
+        }).done(function (data, textStatus, jqXHR) {
+            alert('success send your email');
+
+        }).fail(function (jqXHR, textStatus, errorThrown) {
+
+        });
+    });
 
 });
