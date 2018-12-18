@@ -37,8 +37,6 @@
 /Users/estudimasdanang/Projects/PWAResumeWeb/obj/Debug/netcoreapp2.1/PWAResumeWeb.csproj.CoreCompileInputs.cache
 /Users/estudimasdanang/Projects/PWAResumeWeb/obj/Debug/netcoreapp2.1/PWAResumeWeb.RazorAssemblyInfo.cache
 /Users/estudimasdanang/Projects/PWAResumeWeb/obj/Debug/netcoreapp2.1/PWAResumeWeb.RazorAssemblyInfo.cs
-/Users/estudimasdanang/Projects/PWAResumeWeb/obj/Debug/netcoreapp2.1/PWAResumeWeb.AssemblyInfoInputs.cache
-/Users/estudimasdanang/Projects/PWAResumeWeb/obj/Debug/netcoreapp2.1/PWAResumeWeb.AssemblyInfo.cs
 /Users/estudimasdanang/Projects/PWAResumeWeb/obj/Debug/netcoreapp2.1/PWAResumeWeb.TagHelpers.input.cache
 /Users/estudimasdanang/Projects/PWAResumeWeb/obj/Debug/netcoreapp2.1/PWAResumeWeb.TagHelpers.output.cache
 /Users/estudimasdanang/Projects/PWAResumeWeb/obj/Debug/netcoreapp2.1/PWAResumeWeb.RazorCoreGenerate.cache

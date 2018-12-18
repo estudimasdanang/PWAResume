@@ -3793,13 +3793,13 @@
       "projectName": "PWABusinessProcess",
       "projectPath": "/Users/estudimasdanang/Projects/PWAResumeWeb/PWABusinessProcess/PWABusinessProcess.csproj",
       "packagesPath": "/Users/estudimasdanang/.nuget/packages/",
-      "outputPath": "/Users/estudimasdanang/Projects/PWAResumeWeb/PWABusinessProcess/obj",
+      "outputPath": "/Users/estudimasdanang/Projects/PWAResumeWeb/PWABusinessProcess/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/Users/estudimasdanang/.config/NuGet/NuGet.Config"
+        "/Users/estudimasdanang/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"

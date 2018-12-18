@@ -1,11 +1,50 @@
+let deferredPrompt;
 /*global $, jQuery, alert*/
 $(document).ready(function() {
 
+   installServiceWorkerAsync();
+
+
+   
   'use strict';
 
   // ========================================================================= //
   //  //SMOOTH SCROLL
   // ========================================================================= //
+
+
+
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  // Prevent Chrome 67 and earlier from automatically showing the prompt
+  e.preventDefault();
+  // Stash the event so it can be triggered later.
+    deferredPrompt = e;
+
+      // Update UI notify the user they can add to home screen
+  btnAdd.style.display = 'block';
+});
+
+btnAdd.addEventListener('click', (e) => {
+  // hide our user interface that shows our A2HS button
+  btnAdd.style.display = 'none';
+  // Show the prompt
+  deferredPrompt.prompt();
+  // Wait for the user to respond to the prompt
+  deferredPrompt.userChoice
+    .then((choiceResult) => {
+      if (choiceResult.outcome === 'accepted') {
+        console.log('User accepted the A2HS prompt');
+      } else {
+        console.log('User dismissed the A2HS prompt');
+      }
+      deferredPrompt = null;
+    });
+});
+
+window.addEventListener('appinstalled', (evt) => {
+  app.logEvent('a2hs', 'installed');
+});
 
 
   $(document).on("scroll", onScroll);
@@ -199,10 +238,25 @@ $(document).ready(function() {
             cache: false
         }).done(function (data, textStatus, jqXHR) {
             alert('success send your email');
-
+            console.log(JSON.stringify(data) + '' + textStatus + '' + jqXHR );
         }).fail(function (jqXHR, textStatus, errorThrown) {
-
+            console.log(jqXHR + '' + textStatus + '' + errorThrown );
         });
     });
 
 });
+
+
+
+
+async function installServiceWorkerAsync() {
+    if ('serviceWorker' in navigator) {
+        try {
+            let serviceWorker = await navigator.serviceWorker.register('/sw.js')
+            console.log(`Service worker registered ${serviceWorker}`)
+        } catch (err) {
+            console.error(`Failed to register service worker: ${err}`)
+        }
+    }
+}
+

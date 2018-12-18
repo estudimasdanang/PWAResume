@@ -26,7 +26,7 @@ namespace PWABusinessProcess
             msg.SetSubject(emailVM.EmailSubject);
 
             msg.AddContent(MimeType.Html, "<p>" + emailVM.EmailBody + "</p>");
-            var response = await client.SendEmailAsync(msg);
+            var response = await client.SendEmailAsync(msg); 
         }
 
 

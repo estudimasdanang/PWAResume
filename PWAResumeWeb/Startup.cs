@@ -13,6 +13,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using PWAResumeWeb.Helper;
 using Swashbuckle.AspNetCore.Swagger;
+using WebEssentials.AspNetCore.Pwa;
 
 namespace PWAResumeWeb
 {
@@ -39,8 +40,13 @@ namespace PWAResumeWeb
             {
                 c.SwaggerDoc("v1", new Info { Title = "OAMS API", Version = "v1" });
             });
-
+            services.AddSingleton(typeof(IHttpContextAccessor), typeof(HttpContextAccessor));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddProgressiveWebApp(new PwaOptions
+            {
+                CacheId = "Worker 1.1",
+                Strategy = ServiceWorkerStrategy.CacheFirst
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
