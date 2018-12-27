@@ -12,14 +12,16 @@ namespace PWABusinessProcess
 
         public static async Task SendMail(EmailVM emailVM)
         {
-            var client = new SendGridClient("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");
+           
+            var client = new SendGridClient("");
             var msg = new SendGridMessage();
 
             msg.SetFrom(new EmailAddress(emailVM.OriginSenderEmail, emailVM.OriginSenderName));
 
             var recipients = new List<EmailAddress>
                 {
-                    new EmailAddress("estudimasdanang@gmail.com")
+                    //new EmailAddress("estudimasdanang@gmail.com")
+                    new EmailAddress("")
                 };
             msg.AddTos(recipients);
 

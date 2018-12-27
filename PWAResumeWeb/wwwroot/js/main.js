@@ -1,9 +1,50 @@
-let deferredPrompt;
+
+var deferredPrompt;
+
+window.addEventListener('beforeinstallprompt', function (e) {
+  // Prevent Chrome 67 and earlier from automatically showing the prompt
+  e.preventDefault();
+  // Stash the event so it can be triggered later.
+  deferredPrompt = e;
+
+  showAddToHomeScreen();
+
+});
+
+self.addEventListener('fetch', function(e){
+
+});
+
+
+function showAddToHomeScreen() {
+
+  var a2hsBtn = document.querySelector(".ad2hs-prompt");
+
+  a2hsBtn.style.display = "block";
+
+  a2hsBtn.addEventListener("click", addToHomeScreen);
+
+}
+
+
+function addToHomeScreen() {  var a2hsBtn = document.querySelector(".ad2hs-prompt");  // hide our user interface that shows our A2HS button
+  a2hsBtn.style.display = 'none';  // Show the prompt
+  deferredPrompt.prompt();  // Wait for the user to respond to the prompt
+  deferredPrompt.userChoice
+    .then(function(choiceResult){
+
+  if (choiceResult.outcome === 'accepted') {
+    console.log('User accepted the A2HS prompt');
+  } else {
+    console.log('User dismissed the A2HS prompt');
+  }
+
+  deferredPrompt = null;
+
+});}
+
 /*global $, jQuery, alert*/
 $(document).ready(function() {
-
-   installServiceWorkerAsync();
-
 
    
   'use strict';
@@ -13,39 +54,7 @@ $(document).ready(function() {
   // ========================================================================= //
 
 
-
-
-window.addEventListener('beforeinstallprompt', (e) => {
-  // Prevent Chrome 67 and earlier from automatically showing the prompt
-  e.preventDefault();
-  // Stash the event so it can be triggered later.
-    deferredPrompt = e;
-
-      // Update UI notify the user they can add to home screen
-  btnAdd.style.display = 'block';
-});
-
-btnAdd.addEventListener('click', (e) => {
-  // hide our user interface that shows our A2HS button
-  btnAdd.style.display = 'none';
-  // Show the prompt
-  deferredPrompt.prompt();
-  // Wait for the user to respond to the prompt
-  deferredPrompt.userChoice
-    .then((choiceResult) => {
-      if (choiceResult.outcome === 'accepted') {
-        console.log('User accepted the A2HS prompt');
-      } else {
-        console.log('User dismissed the A2HS prompt');
-      }
-      deferredPrompt = null;
-    });
-});
-
-window.addEventListener('appinstalled', (evt) => {
-  app.logEvent('a2hs', 'installed');
-});
-
+   
 
   $(document).on("scroll", onScroll);
 
@@ -247,16 +256,4 @@ window.addEventListener('appinstalled', (evt) => {
 });
 
 
-
-
-async function installServiceWorkerAsync() {
-    if ('serviceWorker' in navigator) {
-        try {
-            let serviceWorker = await navigator.serviceWorker.register('/sw.js')
-            console.log(`Service worker registered ${serviceWorker}`)
-        } catch (err) {
-            console.error(`Failed to register service worker: ${err}`)
-        }
-    }
-}
 

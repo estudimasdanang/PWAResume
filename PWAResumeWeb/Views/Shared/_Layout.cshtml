@@ -46,6 +46,10 @@
 
 </head>
 <body>
+    <noscript>
+        <!-- anchor linking to external file -->
+        <p>No Java Script Available</p>
+    </noscript>
 
 
     @*<partial name="_CookieConsentPartial" />*@
@@ -108,8 +112,9 @@
 
 
     <!-- Template Main Javascript File -->
-    <script src="~/js/main.js" asp-append-version="true"></script>
+    @*<script src="~/js/main.js" asp-append-version="true"></script>*@
 
+    <script type="text/javascript" src="~/js/main.js?d='@Html.Raw(DateTime.Now.Millisecond)'"></script>
 
     @RenderSection("Scripts", required: false)
 

@@ -38,14 +38,15 @@ namespace PWAResumeWeb
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new Info { Title = "OAMS API", Version = "v1" });
+                c.SwaggerDoc("v1", new Info { Title = "Danang API", Version = "v1" });
             });
             services.AddSingleton(typeof(IHttpContextAccessor), typeof(HttpContextAccessor));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
             services.AddProgressiveWebApp(new PwaOptions
             {
-                CacheId = "Worker 1.1",
-                Strategy = ServiceWorkerStrategy.CacheFirst
+                CacheId = "Worker" + Guid.NewGuid().ToString(),
+                Strategy = ServiceWorkerStrategy.Minimal
             });
         }
 
@@ -65,8 +66,6 @@ namespace PWAResumeWeb
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
-
-
 
             app.UseMvc(routes =>
             {
